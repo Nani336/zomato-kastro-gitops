@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zomato-kastro
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: zomato-kastro
+  template:
+    metadata:
+      labels:
+        app: zomato-kastro
+    spec:
+      containers:
+        - name: zomato-kastro
+          image: chnaresh70/zomato-kastro:latest
+          ports:
+            - containerPort: 3000
